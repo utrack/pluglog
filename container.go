@@ -49,6 +49,7 @@ func (c *Container) GetLogger() Logger {
 	if !ok {
 		logger = &dispatcher{
 			logger: c.spawner(),
+			active: true,
 		}
 		c.loggers[packName] = logger
 	}
